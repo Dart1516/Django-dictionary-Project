@@ -1,0 +1,11 @@
+{# Navigation links, repeated on every page #}
+<p><a href="{% url 'dictionary:search_page' %}">Search</a> | <a href="{% url 'dictionary:word_list' %}">My Vocabulary</a></p>
+
+<h1>Django Dictionary</h1>
+
+{# Only visual for now: the button is disabled until the search is connected #}
+<form>
+    <label for="word">Word:</label>
+    <input type="text" name="word" id="word">
+    <input type="submit" value="Search" disabled>
+</form>

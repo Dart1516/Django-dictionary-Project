@@ -1,37 +1,118 @@
-10:00 21/09/2026 I starte reading this docume,ntation 
-https://docs.djangoproject.com/es/6.1/intro/overview/ 
-10:20 starte to read this 
-https://docs.djangoproject.com/es/6.1/topics/templates/ 
-10:40 this link 
-https://www.djangoproject.com/download/ 
-10:45 https://docs.djangoproject.com/en/6.1/intro/install/ 
-10:48 https://docs.djangoproject.com/en/6.1/faq/install/#faq-python-version-support 
-10:52 https://forum.djangoproject.com/ 
+ACTIVITY LOG - Django Dictionary Project
+========================================
 
-11:15 https://docs.djangoproject.com/en/6.1/howto/deployment/ 
+21/09/2026 - Session 1 (10:00 - 12:00) - 2h 00m
+------------------------------------------------
+10:00  Read the Django overview
+       https://docs.djangoproject.com/es/6.1/intro/overview/
+10:20  Read about templates
+       https://docs.djangoproject.com/es/6.1/topics/templates/
+10:40  Django download page
+       https://www.djangoproject.com/download/
+10:45  Installation guide
+       https://docs.djangoproject.com/en/6.1/intro/install/
+10:48  Python version support FAQ
+       https://docs.djangoproject.com/en/6.1/faq/install/#faq-python-version-support
+10:52  Django forum
+       https://forum.djangoproject.com/
+11:15  Deployment guide
+       https://docs.djangoproject.com/en/6.1/howto/deployment/
+11:17  Deployment checklist
+       https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
+11:20  Conversation with Claude to learn terms and definitions
+11:52  Created my first virtual environment and my first project
+12:00  End of session
 
-11:17 https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/ 
-11:20 start a conversation with cloude to learn different terms and deficintions
-11:52 started my virst virtual enviroment andf create my first proyect   
-12:00 finish the study for today 
+21/09/2026 - Session 2 (22:00 - 23:30) - 1h 30m
+------------------------------------------------
+22:00  Tutorial part 1
+       https://docs.djangoproject.com/es/6.1/intro/tutorial01/
+22:15  Python modules and packages
+       https://docs.python.org/3/tutorial/modules.html#tut-packages
+22:25  Django settings
+       https://docs.djangoproject.com/es/6.1/topics/settings/
+22:35  DJANGO_SETTINGS_MODULE
+       https://docs.djangoproject.com/es/6.1/topics/settings/#envvar-DJANGO_SETTINGS_MODULE
+23:00  Created the djangotutorial project
+23:05  Created my first app: polls
+23:30  Reviewed my notes and what I learned. End of session
 
-22:00 started to study this https://docs.djangoproject.com/es/6.1/intro/tutorial01/ 
-22:15 https://docs.python.org/3/tutorial/modules.html#tut-packages  
-22:25 https://docs.djangoproject.com/es/6.1/topics/settings/ 
-22:35 https://docs.djangoproject.com/es/6.1/topics/settings/#envvar-DJANGO_SETTINGS_MODULE 
-23:00 created the djando tutorial project
-23:05 creater my first startApp Polls
-23:30 Reviewd my notes what I learne and the past score finished for today. 
+22/09/2026 - Session 3 (22:30 - 23:30) - 1h 00m
+------------------------------------------------
+22:30  Learned about path() and started tutorial part 2
+       https://docs.djangoproject.com/en/6.1/intro/tutorial02/
+23:30  Break. End of session
 
-22:30 learn about path and started this docuemtnation https://docs.djangoproject.com/en/6.1/intro/tutorial02/ 
-23:30 take a break,
+23/09/2026 - Session 4 (22:30 - 00:40) - 2h 10m
+------------------------------------------------
+22:30  Continued tutorial part 2
+23:30  Tutorial part 3
+       https://docs.djangoproject.com/en/6.1/intro/tutorial03/
+00:15  Tutorial part 4
+       https://docs.djangoproject.com/en/6.1/intro/tutorial04/
+00:40  Break. End of session
 
-23/09/2026 22:30 continue 
-23:30 https://docs.djangoproject.com/en/6.1/intro/tutorial03/ 
-24/09/2026 00:15    https://docs.djangoproject.com/en/6.1/intro/tutorial04/ 
-00:40 taked a break 
-04:30 https://docs.djangoproject.com/en/6.1/intro/tutorial05/ 
-05:40 pusblisj on git hub and stoped for todayu 
+24/09/2026 - Session 5 (04:30 - 05:40) - 1h 10m
+------------------------------------------------
+04:30  Tutorial part 5
+       https://docs.djangoproject.com/en/6.1/intro/tutorial05/
+05:40  Published on GitHub. End of session
+
+26/09/2026 - 27/09/2026 - Session 6 (23:30 - 01:00) - 1h 30m
+------------------------------------------------
+23:30  Reviewed the module requirements and my project plan with Claude
+       Organized the activity log (dates, sessions, durations and TO DO list)
+       Created README.md following the required module template
+       Updated the README so it only describes what is already done
+       Added .gitignore
+       Project initiation:
+       - Created the new project: dictionary_project (shares the same .venv)
+       - Ran the development server for the new project successfully
+       - Created the app: dictionary
+       - Created the Word model (word, definition, date_saved, is_learned) and its migration
+       - Registered the Word model in the admin site
+       - My Vocabulary page (/words/) with a ListView
+       - Word Detail page (/words/<id>/) with a DetailView
+       - Delete button with a POST form and csrf_token
+       - Search page (/) with the form only, not connected yet
+       - Tests for the pages and the delete button
+       Saw a preview of the finished app (search with Datamuse, CSS) and
+       removed it to keep only what I have studied (tutorial parts 1 - 5)
+01:00  End of session
+
+TOTAL SO FAR: 9h 20m
 
 
+TO DO
+========================================
 
+Study (Monday 28/09/2026)
+-------------------------
+[ ] Tutorial part 6 - static files and CSS
+    https://docs.djangoproject.com/en/6.1/intro/tutorial06/
+[ ] Working with forms - only "HTML forms" and "GET and POST"
+    https://docs.djangoproject.com/en/6.1/topics/forms/
+[ ] Requests Quickstart - "Make a Request", "Passing Parameters In URLs", "JSON Response Content"
+    https://requests.readthedocs.io/en/latest/user/quickstart/
+[ ] Review the Datamuse API
+    https://www.datamuse.com/api/
+[ ] Practice: pip install requests and call Datamuse from the Python shell
+
+Build the app
+-------------
+[x] python manage.py startapp dictionary
+[x] Word model (word, definition, date_saved, is_learned) + migrate
+[ ] Create a superuser and check the words in /admin
+[x] My Vocabulary page (/words/)
+[x] Word Detail page (/words/<id>/)
+[ ] Search page (/) with Datamuse + Save button
+[x] Delete a word
+[ ] Optional: mark a word as learned
+[ ] CSS styles
+
+README (after each part is done)
+--------------------------------
+[ ] Write the Web Pages section
+[ ] Add Requests to Development Environment and "pip install requests" to How to run
+[ ] Add the new websites I studied to Useful Websites
+[ ] Record the demo video (4-5 min) and add the YouTube link
