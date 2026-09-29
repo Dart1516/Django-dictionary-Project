@@ -80,19 +80,43 @@ ACTIVITY LOG - Django Dictionary Project
        removed it to keep only what I have studied (tutorial parts 1 - 5)
 01:00  End of session
 
-TOTAL SO FAR: 9h 20m
+28/09/2026 - 29/09/2026 - Session 7 (23:00 - 02:15) - 3h 15m
+------------------------------------------------
+23:00  Added the Web Pages section to the README
+       Read Working with forms ("HTML forms" and "GET and POST")
+       https://docs.djangoproject.com/en/6.1/topics/forms/
+       Read the Requests Quickstart
+       https://requests.readthedocs.io/en/latest/user/quickstart/
+       Tutorial part 6 - static files and CSS
+       https://docs.djangoproject.com/en/6.1/intro/tutorial06/
+       - Created polls/static/polls/style.css (green links)
+       - Fixed: the static folder was inside templates, moved it to polls/static
+       - Added a background image in polls/static/polls/images
+       - Fixed: the image was outside the images folder
+       Added 3 more poll questions with choices from the shell
+       Tutorial part 7 - customizing the admin site
+       https://docs.djangoproject.com/en/6.1/intro/tutorial07/
+       - ChoiceInline with TabularInline
+       - list_display, @admin.display, list_filter and search_fields
+       - Custom admin title with templates/admin/base_site.html and DIRS in settings
+       Updated the README with the new websites
+02:15  End of session
+
+TOTAL SO FAR: 12h 35m
 
 
 TO DO
 ========================================
 
-Study (Monday 28/09/2026)
--------------------------
-[ ] Tutorial part 6 - static files and CSS
+Study
+-----
+[x] Tutorial part 6 - static files and CSS
     https://docs.djangoproject.com/en/6.1/intro/tutorial06/
-[ ] Working with forms - only "HTML forms" and "GET and POST"
+[x] Tutorial part 7 - customizing the admin site
+    https://docs.djangoproject.com/en/6.1/intro/tutorial07/
+[x] Working with forms - only "HTML forms" and "GET and POST"
     https://docs.djangoproject.com/en/6.1/topics/forms/
-[ ] Requests Quickstart - "Make a Request", "Passing Parameters In URLs", "JSON Response Content"
+[x] Requests Quickstart - "Make a Request", "Passing Parameters In URLs", "JSON Response Content"
     https://requests.readthedocs.io/en/latest/user/quickstart/
 [ ] Review the Datamuse API
     https://www.datamuse.com/api/
@@ -112,7 +136,8 @@ Build the app
 
 README (after each part is done)
 --------------------------------
-[ ] Write the Web Pages section
+[x] Write the Web Pages section
+[ ] Update the Web Pages section when the search works
 [ ] Add Requests to Development Environment and "pip install requests" to How to run
-[ ] Add the new websites I studied to Useful Websites
+[x] Add the new websites I studied to Useful Websites
 [ ] Record the demo video (4-5 min) and add the YouTube link

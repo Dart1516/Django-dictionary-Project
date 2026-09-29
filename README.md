@@ -1,6 +1,6 @@
 # Overview
 
-As a software engineer, I want to understand how server-side web frameworks generate pages dynamically. I had already built an English dictionary app in TypeScript that ran entirely in the browser, so for this project I am rebuilding the same idea with Django and Python, moving the logic to the server and adding a database. Before writing my own app, I worked through the official Django tutorial (parts 1–5) to learn models, views, URLs, templates, forms and testing.
+As a software engineer, I want to understand how server-side web frameworks generate pages dynamically. I had already built an English dictionary app in TypeScript that ran entirely in the browser, so for this project I am rebuilding the same idea with Django and Python, moving the logic to the server and adding a database. Before writing my own app, I worked through the official Django tutorial (parts 1–7) to learn models, views, URLs, templates, forms, testing, static files and the admin site.
 
 **Django Dictionary** is a vocabulary website for people learning English. The user searches for a word, the app gets its definition, and the user can save it to a personal word list to review later. The core idea is: **search → save → review**.
 
@@ -28,7 +28,9 @@ My purpose for writing this software is to learn how a request travels through a
 
 # Web Pages
 
-{Describe each of the web pages you created and how the web app transitions between each of them.  Also describe what is dynamically created on each page.}
+* **Search** (`/`) — Shows the search form.
+* **My Vocabulary** (`/words/`) — Lists all saved words from the database, newest first. Each word links to its detail page.
+* **Word Detail** (`/words/<id>/`) — Shows one word with its definition, save date and status, and a Delete button that removes it and returns to My Vocabulary.
 
 # Development Environment
 
@@ -47,9 +49,11 @@ My purpose for writing this software is to learn how a request travels through a
 
 * [Django Overview](https://docs.djangoproject.com/en/6.1/intro/overview/)
 * [Django Installation Guide](https://docs.djangoproject.com/en/6.1/intro/install/)
-* [Django Tutorial (parts 1–5)](https://docs.djangoproject.com/en/6.1/intro/tutorial01/)
+* [Django Tutorial (parts 1–7)](https://docs.djangoproject.com/en/6.1/intro/tutorial01/)
 * [Django Templates](https://docs.djangoproject.com/en/6.1/topics/templates/)
 * [Django Settings](https://docs.djangoproject.com/en/6.1/topics/settings/)
+* [Django: Working with Forms](https://docs.djangoproject.com/en/6.1/topics/forms/)
+* [Requests Quickstart](https://requests.readthedocs.io/en/latest/user/quickstart/)
 * [Django Deployment Checklist](https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/)
 * [Python Tutorial: Modules and Packages](https://docs.python.org/3/tutorial/modules.html#tut-packages)
 * [Django Forum](https://forum.djangoproject.com/)
