@@ -61,48 +61,24 @@ ACTIVITY LOG - Django Dictionary Project
 26/09/2026 - 27/09/2026 - Session 6 (23:30 - 01:00) - 1h 30m
 ------------------------------------------------
 23:30  Reviewed the module requirements and my project plan with Claude
-       Organized the activity log (dates, sessions, durations and TO DO list)
-       Created README.md following the required module template
-       Updated the README so it only describes what is already done
-       Added .gitignore
-       Project initiation:
-       - Created the new project: dictionary_project (shares the same .venv)
-       - Ran the development server for the new project successfully
-       - Created the app: dictionary
-       - Created the Word model (word, definition, date_saved, is_learned) and its migration
-       - Registered the Word model in the admin site
-       - My Vocabulary page (/words/) with a ListView
-       - Word Detail page (/words/<id>/) with a DetailView
-       - Delete button with a POST form and csrf_token
-       - Search page (/) with the form only, not connected yet
-       - Tests for the pages and the delete button
-       Saw a preview of the finished app (search with Datamuse, CSS) and
-       removed it to keep only what I have studied (tutorial parts 1 - 5)
+       Organized the activity log and created the README from the module template
+       Started the dictionary project: model, list page, detail page and delete button
 01:00  End of session
 
-28/09/2026 - 29/09/2026 - Session 7 (23:00 - 02:15) - 3h 15m
+28/09/2026 - 29/09/2026 - Session 7 (23:00 - 03:00) - 4h 00m
 ------------------------------------------------
-23:00  Added the Web Pages section to the README
-       Read Working with forms ("HTML forms" and "GET and POST")
+23:00  Read about forms, GET and POST
        https://docs.djangoproject.com/en/6.1/topics/forms/
        Read the Requests Quickstart
        https://requests.readthedocs.io/en/latest/user/quickstart/
-       Tutorial part 6 - static files and CSS
+23:30  Tutorial part 6 - static files and CSS
        https://docs.djangoproject.com/en/6.1/intro/tutorial06/
-       - Created polls/static/polls/style.css (green links)
-       - Fixed: the static folder was inside templates, moved it to polls/static
-       - Added a background image in polls/static/polls/images
-       - Fixed: the image was outside the images folder
-       Added 3 more poll questions with choices from the shell
-       Tutorial part 7 - customizing the admin site
+00:30  Tutorial part 7 - customizing the admin site
        https://docs.djangoproject.com/en/6.1/intro/tutorial07/
-       - ChoiceInline with TabularInline
-       - list_display, @admin.display, list_filter and search_fields
-       - Custom admin title with templates/admin/base_site.html and DIRS in settings
-       Updated the README with the new websites
-02:15  End of session
+02:15  Updated the README and the activity log
+03:00  End of session
 
-TOTAL SO FAR: 12h 35m
+TOTAL SO FAR: 13h 20m
 
 
 TO DO
