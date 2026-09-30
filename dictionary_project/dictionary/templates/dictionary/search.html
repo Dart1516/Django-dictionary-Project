@@ -1,11 +1,43 @@
-{# Navigation links, repeated on every page #}
-<p><a href="{% url 'dictionary:search_page' %}">Search</a> | <a href="{% url 'dictionary:word_list' %}">My Vocabulary</a></p>
+{% load static %}
+<link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
 
-<h1>Django Dictionary</h1>
+{# Navigation #}
+<nav>
+    <a href="{% url 'dictionary:search_page' %}">Search</a>
+    <a href="{% url 'dictionary:word_list' %}">My Vocabulary</a>
+</nav>
 
-{# Only visual for now: the button is disabled until the search is connected #}
-<form>
-    <label for="word">Word:</label>
-    <input type="text" name="word" id="word">
-    <input type="submit" value="Search" disabled>
-</form>
+<main>
+    <h1>Django Dictionary</h1>
+
+    {# GET puts the word in the URL: /?word=apple #}
+    <form action="{% url 'dictionary:search_page' %}" method="get" class="search-form">
+        <label for="word">Word:</label>
+        <input type="text" name="word" id="word" value="{{ searched_word }}" required>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if error_message %}
+        <p class="message">{{ error_message }}</p>
+    {% endif %}
+
+    {# Result from search_page in views.py #}
+    {% if found_word %}
+        <div class="card">
+            <h2>{{ found_word }}</h2>
+            <p>{{ definition }}</p>
+
+            {% if already_saved %}
+                <p class="message">This word is already in your vocabulary.</p>
+            {% else %}
+                {# Save button (POST) #}
+                <form action="{% url 'dictionary:save_word' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="word" value="{{ found_word }}">
+                    <input type="hidden" name="definition" value="{{ definition }}">
+                    <input type="submit" value="Save">
+                </form>
+            {% endif %}
+        </div>
+    {% endif %}
+</main>

@@ -1,15 +1,30 @@
-{# Navigation links, repeated on every page #}
-<p><a href="{% url 'dictionary:search_page' %}">Search</a> | <a href="{% url 'dictionary:word_list' %}">My Vocabulary</a></p>
+{% load static %}
+<link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
 
-<h1>My Vocabulary</h1>
+{# Navigation #}
+<nav>
+    <a href="{% url 'dictionary:search_page' %}">Search</a>
+    <a href="{% url 'dictionary:word_list' %}">My Vocabulary</a>
+</nav>
 
-{# saved_words comes from WordListView in views.py #}
-{% if saved_words %}
-    <ul>
-    {% for saved_word in saved_words %}
-        <li><a href="{% url 'dictionary:word_detail' saved_word.id %}">{{ saved_word.word }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No words saved yet.</p>
-{% endif %}
+<main>
+    <h1>My Vocabulary</h1>
+
+    {# saved_words comes from WordListView #}
+    {% if saved_words %}
+        <ul class="word-list">
+        {% for saved_word in saved_words %}
+            <li>
+                <a href="{% url 'dictionary:word_detail' saved_word.id %}">{{ saved_word.word }}</a>
+                {% if saved_word.is_learned %}
+                    <span class="status learned">Learned</span>
+                {% else %}
+                    <span class="status">Pending</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p class="message">No words saved yet.</p>
+    {% endif %}
+</main>

@@ -1,11 +1,4 @@
-"""
-ASGI config for mysite project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/6.1/howto/deployment/asgi/
-"""
+# Used to run the project on a real server (not needed for runserver)
 
 import os
 

@@ -1,8 +1,10 @@
 # Overview
 
-As a software engineer, I want to understand how server-side web frameworks generate pages dynamically. I had already built an English dictionary app in TypeScript that ran entirely in the browser, so for this project I am rebuilding the same idea with Django and Python, moving the logic to the server and adding a database. Before writing my own app, I worked through the official Django tutorial (parts 1–7) to learn models, views, URLs, templates, forms, testing, static files and the admin site.
+As a software engineer, I want to understand how server-side web frameworks generate pages dynamically. I had already built an English dictionary app in TypeScript that ran entirely in the browser, so for this project I rebuilt the same idea with Django and Python, moving the logic to the server and adding a database. Before writing my own app, I worked through the official Django tutorial (parts 1–7) to learn models, views, URLs, templates, forms, testing, static files and the admin site.
 
-**Django Dictionary** is a vocabulary website for people learning English. The user searches for a word, the app gets its definition, and the user can save it to a personal word list to review later. The core idea is: **search → save → review**.
+**Django Dictionary** is a vocabulary website for people learning English. The user searches for a word, the app gets its definition from the [Datamuse API](https://www.datamuse.com/api/), and the user can save it to a personal word list to review later, marking each word as learned once they know it. The core idea is: **search → save → review**.
+
+The app is in the `dictionary_project` folder. The `djangotutorial` folder is my practice project from the official Django tutorial.
 
 ### How to run it
 
@@ -10,9 +12,9 @@ As a software engineer, I want to understand how server-side web frameworks gene
    ```
    .venv\Scripts\Activate.ps1
    ```
-2. Install Django (only the first time):
+2. Install Django and Requests (only the first time):
    ```
-   pip install django
+   pip install django requests
    ```
 3. Go into the project folder, create the database, and start the test server:
    ```
@@ -20,30 +22,34 @@ As a software engineer, I want to understand how server-side web frameworks gene
    python manage.py migrate
    python manage.py runserver
    ```
-4. Open **http://127.0.0.1:8000/** in a web browser.
+4. Open **http://127.0.0.1:8000/** in a web browser to see the Search page.
 
-My purpose for writing this software is to learn how a request travels through a web framework: from the URL, to a Python view, to the database, and back to the user as an HTML page generated from a template.
+My purpose for writing this software is to learn how a request travels through a web framework: from the URL, to a Python view, to the database or an external API, and back to the user as an HTML page generated from a template.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/xgX34TM_C2g)
 
 # Web Pages
 
-* **Search** (`/`) — Shows the search form.
-* **My Vocabulary** (`/words/`) — Lists all saved words from the database, newest first. Each word links to its detail page.
-* **Word Detail** (`/words/<id>/`) — Shows one word with its definition, save date and status, and a Delete button that removes it and returns to My Vocabulary.
+* **Search** (`/`) — Shows a search form. When the user submits a word, the view reads it from the URL (`/?word=apple`), asks the Datamuse API for its definition and shows the result with a **Save** button. If the word does not exist, or is already saved, the page shows a message instead. Pressing Save stores the word in the database and opens its Word Detail page.
+* **My Vocabulary** (`/words/`) — Lists all saved words from the database, newest first, with a Pending or Learned label. Each word links to its detail page.
+* **Word Detail** (`/words/<id>/`) — Shows one word with its definition, save date and status. The **Mark as learned** button changes its status, and the **Delete** button removes it and returns to My Vocabulary.
+
+A navigation bar on every page links to Search and My Vocabulary. No word or definition is written by hand in the HTML: all the content comes from the Python views, the database and the Datamuse API.
 
 # Development Environment
 
 * Visual Studio Code
 * Git and GitHub for version control
 * Python virtual environment (`venv`)
-* Django's built-in development server and admin site
+* Django's built-in development server and admin site (with a custom list, filter and search for words)
 
 **Language and libraries:**
 
 * Python 3.14
 * Django 6.1 — web framework (URLs, views, templates, ORM)
 * SQLite — database, through Django's ORM
+* Requests — HTTP library used to call the Datamuse API
+* HTML and CSS for the templates
 
 # Useful Websites
 
@@ -54,13 +60,14 @@ My purpose for writing this software is to learn how a request travels through a
 * [Django Settings](https://docs.djangoproject.com/en/6.1/topics/settings/)
 * [Django: Working with Forms](https://docs.djangoproject.com/en/6.1/topics/forms/)
 * [Requests Quickstart](https://requests.readthedocs.io/en/latest/user/quickstart/)
+* [Datamuse API](https://www.datamuse.com/api/)
 * [Django Deployment Checklist](https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/)
 * [Python Tutorial: Modules and Packages](https://docs.python.org/3/tutorial/modules.html#tut-packages)
 * [Django Forum](https://forum.djangoproject.com/)
 
 # Future Work
 
-* Mark words as learned and filter the list by pending / learned words
+* Filter the My Vocabulary list by pending / learned words
 * Show more information for each word (examples, synonyms, pronunciation)
 * Add user accounts so each person has their own word list
 * Deploy the app online so it can be used outside my computer

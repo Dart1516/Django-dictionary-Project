@@ -1,17 +1,43 @@
-{# Navigation links, repeated on every page #}
-<p><a href="{% url 'dictionary:search_page' %}">Search</a> | <a href="{% url 'dictionary:word_list' %}">My Vocabulary</a></p>
+{% load static %}
+<link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
 
-{# saved_word comes from WordDetailView in views.py #}
-<h1>{{ saved_word.word }}</h1>
+{# Navigation #}
+<nav>
+    <a href="{% url 'dictionary:search_page' %}">Search</a>
+    <a href="{% url 'dictionary:word_list' %}">My Vocabulary</a>
+</nav>
 
-<p>{{ saved_word.definition }}</p>
-<p>Saved: {{ saved_word.date_saved }}</p>
-<p>Status: {% if saved_word.is_learned %}Learned{% else %}Pending{% endif %}</p>
+<main>
+    {# saved_word comes from WordDetailView #}
+    <div class="card">
+        <h1>{{ saved_word.word }}</h1>
+        <p>{{ saved_word.definition }}</p>
+        <p class="message">Saved: {{ saved_word.date_saved }}</p>
+        <p class="message">
+            Status:
+            {% if saved_word.is_learned %}
+                <span class="status learned">Learned</span>
+            {% else %}
+                <span class="status">Pending</span>
+            {% endif %}
+        </p>
 
-{# The Delete button sends a POST request to the delete_word view #}
-<form action="{% url 'dictionary:delete_word' saved_word.id %}" method="post">
-{% csrf_token %}
-<input type="submit" value="Delete">
-</form>
+        <div class="actions">
+            {# Buttons (POST) #}
+            <form action="{% url 'dictionary:toggle_learned' saved_word.id %}" method="post">
+                {% csrf_token %}
+                {% if saved_word.is_learned %}
+                    <input type="submit" value="Mark as pending">
+                {% else %}
+                    <input type="submit" value="Mark as learned">
+                {% endif %}
+            </form>
+            <form action="{% url 'dictionary:delete_word' saved_word.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Delete" class="delete">
+            </form>
+        </div>
+    </div>
 
-<a href="{% url 'dictionary:word_list' %}">Back to My Vocabulary</a>
+    <a href="{% url 'dictionary:word_list' %}">Back to My Vocabulary</a>
+</main>

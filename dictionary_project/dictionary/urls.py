@@ -2,16 +2,20 @@ from django.urls import path
 
 from . import views
 
-# The namespace used in templates, for example {% url 'dictionary:word_list' %}
+# Used in templates like {% url 'dictionary:word_list' %}
 app_name = "dictionary"
 
 urlpatterns = [
-    # /                   -> Search page
+    # Search page
     path("", views.search_page, name="search_page"),
-    # /words/             -> My Vocabulary page
+    # Save button
+    path("save/", views.save_word, name="save_word"),
+    # My Vocabulary page
     path("words/", views.WordListView.as_view(), name="word_list"),
-    # /words/1/           -> Word Detail page of the word with id 1
+    # Detail page, for example /words/1/
     path("words/<int:pk>/", views.WordDetailView.as_view(), name="word_detail"),
-    # /words/1/delete/    -> Deletes the word with id 1 (used by the Delete button)
+    # Mark as learned / pending button
+    path("words/<int:word_id>/learned/", views.toggle_learned, name="toggle_learned"),
+    # Delete button
     path("words/<int:word_id>/delete/", views.delete_word, name="delete_word"),
 ]

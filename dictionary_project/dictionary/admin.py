@@ -2,6 +2,12 @@ from django.contrib import admin
 
 from .models import Word
 
-# Makes the Word model visible in the admin site (/admin/),
-# so words can be added, edited and deleted from there.
-admin.site.register(Word)
+
+# Columns, filter and search box for words in /admin/
+class WordAdmin(admin.ModelAdmin):
+    list_display = ["word", "date_saved", "is_learned"]
+    list_filter = ["is_learned", "date_saved"]
+    search_fields = ["word"]
+
+
+admin.site.register(Word, WordAdmin)

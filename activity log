@@ -78,42 +78,19 @@ ACTIVITY LOG - Django Dictionary Project
 02:15  Updated the README and the activity log
 03:00  End of session
 
-TOTAL SO FAR: 13h 20m
+29/09/2026 - Session 8 (21:00 - 23:00) - 2h 00m
+------------------------------------------------
+21:00  Planned the last steps to finish the project
+       Practiced the Datamuse API with requests in the Python shell
+       https://www.datamuse.com/api/
+21:20  Finished the dictionary project: search with Datamuse, Save button,
+       mark as learned, CSS styles and a custom admin for words
+21:45  Practiced the video script, recorded the demo video and uploaded it to YouTube
+       https://youtu.be/xgX34TM_C2g
+22:12  Posted the video link in Microsoft Teams
+22:15  Updated the README and the activity log
+       Wrote the Discussion of Learning Strategies
+       Commit and push to GitHub
+23:00  End of session
 
-
-TO DO
-========================================
-
-Study
------
-[x] Tutorial part 6 - static files and CSS
-    https://docs.djangoproject.com/en/6.1/intro/tutorial06/
-[x] Tutorial part 7 - customizing the admin site
-    https://docs.djangoproject.com/en/6.1/intro/tutorial07/
-[x] Working with forms - only "HTML forms" and "GET and POST"
-    https://docs.djangoproject.com/en/6.1/topics/forms/
-[x] Requests Quickstart - "Make a Request", "Passing Parameters In URLs", "JSON Response Content"
-    https://requests.readthedocs.io/en/latest/user/quickstart/
-[ ] Review the Datamuse API
-    https://www.datamuse.com/api/
-[ ] Practice: pip install requests and call Datamuse from the Python shell
-
-Build the app
--------------
-[x] python manage.py startapp dictionary
-[x] Word model (word, definition, date_saved, is_learned) + migrate
-[ ] Create a superuser and check the words in /admin
-[x] My Vocabulary page (/words/)
-[x] Word Detail page (/words/<id>/)
-[ ] Search page (/) with Datamuse + Save button
-[x] Delete a word
-[ ] Optional: mark a word as learned
-[ ] CSS styles
-
-README (after each part is done)
---------------------------------
-[x] Write the Web Pages section
-[ ] Update the Web Pages section when the search works
-[ ] Add Requests to Development Environment and "pip install requests" to How to run
-[x] Add the new websites I studied to Useful Websites
-[ ] Record the demo video (4-5 min) and add the YouTube link
+TOTAL: 15h 20m
